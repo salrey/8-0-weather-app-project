@@ -37,22 +37,32 @@ document.querySelector("form").addEventListener("submit", (event) => {
             const mainHeading = document.createElement("h2");
             mainHeading.textContent = capitalize(location);
             const area = document.createElement("p");
-            area.textContent = `Area: ${capitalize(weather.nearest_area[0].areaName[0].value)}`
+            area.innerHTML = `<span>Area:</span> ${capitalize(weather.nearest_area[0].areaName[0].value)}`
             const region = document.createElement("p");
-            region.textContent = `Region: ${capitalize(weather.nearest_area[0].region[0].value)}`
+            region.innerHTML = `<span>Region:</span> ${capitalize(weather.nearest_area[0].region[0].value)}`
             const country = document.createElement("p");
-            country.textContent = `Country: ${capitalize(weather.nearest_area[0].country[0].value)}`
+            country.innerHTML = `<span>Country:</span> ${capitalize(weather.nearest_area[0].country[0].value)}`
             const currently = document.createElement("p");
-            currently.textContent = `Currently: Feels like ${capitalize(weather.current_condition[0].FeelsLikeF)}°F`
-
+            currently.innerHTML = `<span>Currently:</span> Feels like ${capitalize(weather.current_condition[0].FeelsLikeF)}°F`
             //append it main-info 
             mainInfo.append(mainHeading, area, region, country, currently);
 
             //Add stuff to today
-
+            const todayHeading = document.createElement("h3")
+            todayHeading.textContent = "Today"
+            const todayAvg = document.createElement("p")
+            todayAvg.innerHTML = `<span>Average:</span> `
+            const todayMax = document.createElement("p")
+            const todayMin = document.createElement("p")
+            today.append(todayHeading,todayAvg,todayMax, todayMin)
+            
             //Add stuff to tomorrow
-
+            const tomorrowHeading = document.createElement("h3")
+            tomorrowHeading.textContent = "Tomorrow"
+            
             //Add stuff to day-after-tomorrow 
+            const dayAfterHeading = document.createElement("h3")
+            dayAfterHeading.textContent = "Day After Tomorrow"
 
 
 
