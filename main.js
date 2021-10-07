@@ -51,19 +51,34 @@ document.querySelector("form").addEventListener("submit", (event) => {
             const todayHeading = document.createElement("h3")
             todayHeading.textContent = "Today"
             const todayAvg = document.createElement("p")
-            todayAvg.innerHTML = `<span>Average:</span> `
+            todayAvg.innerHTML = `<span>Average:</span> ${capitalize(weather.weather[0].avgtempF)}°F`
             const todayMax = document.createElement("p")
+            todayMax.innerHTML = `<span>Highest:</span> ${capitalize(weather.weather[0].maxtempF)}°F`
             const todayMin = document.createElement("p")
+            todayMin.innerHTML = `<span>Lowest:</span> ${capitalize(weather.weather[0].mintempF)}°F`
             today.append(todayHeading,todayAvg,todayMax, todayMin)
             
             //Add stuff to tomorrow
             const tomorrowHeading = document.createElement("h3")
             tomorrowHeading.textContent = "Tomorrow"
-            
+            const tomorrowAvg = document.createElement("p")
+            tomorrowAvg.innerHTML = `<span>Average:</span> ${capitalize(weather.weather[1].avgtempF)}°F`
+            const tomorrowMax = document.createElement("p")
+            tomorrowMax.innerHTML = `<span>Highest:</span> ${capitalize(weather.weather[1].maxtempF)}°F`
+            const tomorrowMin = document.createElement("p")
+            tomorrowMin.innerHTML = `<span>Lowest:</span> ${capitalize(weather.weather[1].mintempF)}°F`
+            tomorrow.append(tomorrowHeading,tomorrowAvg,tomorrowMax, tomorrowMin)
+
             //Add stuff to day-after-tomorrow 
             const dayAfterHeading = document.createElement("h3")
             dayAfterHeading.textContent = "Day After Tomorrow"
-
+            const dayAfterAvg = document.createElement("p")
+            dayAfterAvg.innerHTML = `<span>Average:</span> ${capitalize(weather.weather[2].avgtempF)}°F`
+            const dayAfterMax = document.createElement("p")
+            dayAfterMax.innerHTML = `<span>Highest:</span> ${capitalize(weather.weather[2].maxtempF)}°F`
+            const dayAfterMin = document.createElement("p")
+            dayAfterMin.innerHTML = `<span>Lowest:</span> ${capitalize(weather.weather[2].mintempF)}°F`
+            dayAfterTomorrow.append(dayAfterHeading,dayAfterAvg,dayAfterMax, dayAfterMin)
 
 
         })
