@@ -19,12 +19,28 @@ document.querySelector("form").addEventListener("submit", (event) => {
             //check weather
             // console.log(weather)
 
+            //create main heading
+            const mainHeading = document.createElement("h2");
+            mainHeading.textContent = capitalize(location);
+
+            //create main info
+            const area = document.createElement("p");
             
+
+            //append main weather information
+            document.querySelector(".display").append(mainHeading, area, region, country, currently);
         })
     }
 
     event.target.reset()
 })
+
+//------------Helper Functions------------
+const capitalize = (location) => {
+    const listWords = location.split(" ")
+    const capLocation = listWords.map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
+    return capLocation.join(" ")
+}
 
 // const createWeatherInformation = (weather) => {
 
