@@ -17,18 +17,45 @@ document.querySelector("form").addEventListener("submit", (event) => {
         .then((response) => response.json())
         .then((weather) => {            
             //check weather
-            // console.log(weather)
+            console.log(weather.nearest_area[0].areaName[0].value)
 
-            //create main heading
+            //create 4 articles in the main section (main-info, today, tomorrow, day-after-tomorrow)
+
+            const mainInfo = document.createElement("article")
+            mainInfo.id = "main-info"
+            const today = document.createElement("article")
+            today.id = "today"
+            const tomorrow = document.createElement("article")
+            tomorrow.id = "tomorrow"
+            const dayAfterTomorrow = document.createElement("article")
+            dayAfterTomorrow.id = "day-after-tomorrow"
+
+            //append all of the articles to .display section 
+            document.querySelector(".display").append(mainInfo, today, tomorrow, dayAfterTomorrow)
+
+            //Add stuff to main-info
             const mainHeading = document.createElement("h2");
             mainHeading.textContent = capitalize(location);
-
-            //create main info
             const area = document.createElement("p");
-            
+            area.textContent = `Area: ${capitalize(weather.nearest_area[0].areaName[0].value)}`
+            const region = document.createElement("p");
+            region.textContent = `Region: ${capitalize(weather.nearest_area[0].region[0].value)}`
+            const country = document.createElement("p");
+            country.textContent = `Country: ${capitalize(weather.nearest_area[0].country[0].value)}`
+            const currently = document.createElement("p");
+            currently.textContent = `Currently: Feels like ${capitalize(weather.current_condition[0].FeelsLikeF)}°F`
 
-            //append main weather information
-            document.querySelector(".display").append(mainHeading, area, region, country, currently);
+            //append it main-info 
+            mainInfo.append(mainHeading, area, region, country, currently);
+
+            //Add stuff to today
+
+            //Add stuff to tomorrow
+
+            //Add stuff to day-after-tomorrow 
+
+
+
         })
     }
 
