@@ -1,5 +1,7 @@
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 header,
@@ -7,6 +9,11 @@ footer {
     text-align: center;
     background-color: teal;
     color: white;
+    grid-column: span 4;
+}
+
+.display {
+    grid-column: span 3;
 }
 
 #main-info,
