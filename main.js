@@ -113,6 +113,10 @@ document.querySelector("form").addEventListener("submit", (event) => {
                 document.getElementById(getId).classList.remove("hidden")
             }))
         })
+        .catch(() => {
+            document.querySelector(".display p").classList.remove("hidden")
+            document.querySelector(".display").classList.add("error")
+        })
     }
 
     event.target.reset()
