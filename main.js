@@ -94,7 +94,9 @@ document.querySelector("form").addEventListener("submit", (event) => {
             dayAfterMin.innerHTML = `<span>Lowest:</span> ${weather.weather[2].mintempF}°F`
             dayAfterTomorrow.append(dayAfterHeading,dayAfterAvg,dayAfterMax, dayAfterMin)
 
-            
+            //Append items to aside for previous searches 
+            const searchList = document.querySelector("ul")
+            searchList.innerHTML += `<li><a href="#" >${capitalize(location)}</a> - ${weather.current_condition[0].FeelsLikeF}°F</li>`
         })
     }
 
