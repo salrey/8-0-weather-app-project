@@ -97,6 +97,17 @@ document.querySelector("form").addEventListener("submit", (event) => {
             //Append items to aside for previous searches 
             const searchList = document.querySelector("ul")
             searchList.innerHTML += `<li><a href="#" >${capitalize(location)}</a> - ${weather.current_condition[0].FeelsLikeF}°F</li>`
+
+            //Add events for links 
+            document.querySelectorAll("a").forEach((link) => link.addEventListener("click", (event) => {
+                event.preventDefault();
+
+                //remove/reset display area 
+                document.querySelector(".display").classList.remove("error")
+                document.querySelector(".display p").classList.add("hidden")
+                document.querySelectorAll(".display section").forEach((section) => section.classList.add("hidden"))
+
+            }))
         })
     }
 
