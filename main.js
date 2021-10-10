@@ -107,6 +107,10 @@ document.querySelector("form").addEventListener("submit", (event) => {
                 document.querySelector(".display p").classList.add("hidden")
                 document.querySelectorAll(".display section").forEach((section) => section.classList.add("hidden"))
 
+                //display specific section from previous search
+                const getId = event.target.textContent.toLowerCase().split(" ").join("")
+                //set to get element by id so that numeric locations work 
+                document.getElementById(getId).classList.remove("hidden")
             }))
         })
     }
