@@ -19,7 +19,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
         document.querySelector(".history p").classList.add("hidden")
         document.querySelector(".display p").classList.add("hidden")
         
-        fetch(`http://wttr.in/${location}?format=j1`)
+        fetch(`https://wttr.in/${location}?format=j1`)
         .then((response) => response.json())
         .then((weather) => {            
             //check weather
