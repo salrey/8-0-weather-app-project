@@ -43,10 +43,22 @@ form {
     margin-top: 10px;
 }
 
+div {
+    display: flex;
+    width: 90%;
+    margin: auto
+}
+
 div p {
     padding: 5px 0px;
     width: 60%;
     margin: 10px auto;
+}
+
+#today,
+#tomorrow,
+#day-after-tomorrow {
+    width: 34%;
 }
 
 .history {
